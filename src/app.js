@@ -16,5 +16,5 @@ app.listen(PORT, () => {
 });
 
 app.get("/", (req, res) => {
-  res.json({ user: 'geek'})
+  res.json({ user: 'Maximo'})
 });
