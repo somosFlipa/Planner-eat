@@ -19,3 +19,6 @@ app.get("/", (req, res) => {
 res.status(200).send('funciono correctamente')
   res.json({ user: 'Maximo'})
 });
+
+
+// empezando el proyecto
