@@ -18,3 +18,6 @@ app.listen(PORT, () => {
 app.get("/", (req, res) => {
   res.json({ user: 'geek'})
 });
+
+
+// empezando el proyecto
