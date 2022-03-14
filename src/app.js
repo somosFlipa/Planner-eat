@@ -6,7 +6,6 @@ const PORT = process.env.PORT || 3000;
 
 
 app.use(express.json());
-
 app.use(
   express.urlencoded({
     extended: true,}));
@@ -16,7 +15,8 @@ app.listen(PORT, () => {
 });
 
 app.get("/", (req, res) => {
-  res.json({ user: 'geek'})
+res.status(200).send('funciono correctamente')
+  res.json({ user: 'Maximo'})
 });
 
 
