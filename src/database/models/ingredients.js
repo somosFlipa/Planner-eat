@@ -1,6 +1,5 @@
 const { Sequelize } = require("sequelize");
-const db = require("../db/database");
-'use strict';
+const db = require("../db");
 
 const ingredients = db.define(
   "ingredients",
@@ -16,6 +15,7 @@ const ingredients = db.define(
   },
   {
     timestamps: false,
+  freezeTableName: true,
   }
 );
 

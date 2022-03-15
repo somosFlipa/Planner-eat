@@ -1,6 +1,6 @@
 const { Sequelize } = require("sequelize");
 const db = require("../db/database");
-'use strict';
+
 
 const user = db.define(
   "user",
@@ -30,6 +30,7 @@ const user = db.define(
   },
   {
     timestamps: false,
+  freezeTableName: true,
   }
 );
 

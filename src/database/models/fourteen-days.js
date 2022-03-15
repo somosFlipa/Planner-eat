@@ -1,6 +1,6 @@
 const { Sequelize } = require("sequelize");
-const db = require("../db/database");
-'use strict';
+const db = require("../db");
+
 
 const fourteenDays = db.define(
 "fourteen-days",
@@ -20,6 +20,7 @@ const fourteenDays = db.define(
   {
 
     timestamps: false,
+  freezeTableName: true,
   }
 );
 
