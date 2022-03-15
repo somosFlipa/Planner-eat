@@ -1,16 +1,16 @@
 const { Sequelize } = require("sequelize");
-const db = require("../db/database");
-'use strict';
+const db = require("../db");
+
 
 
 const dish = db.define(
   "dish",
   {
-    IdCookingRecipe: {
+     cookingrecipeId: {
       type: Sequelize.INTEGER,
       allowNull: false,
     },
-    idIngredients: {
+    ingredientId: {
       type: Sequelize.INTEGER,
       allowNull: false,
     },
@@ -21,6 +21,7 @@ const dish = db.define(
   },
   {
     timestamps: false,
+  freezeTableName: true,
   }
 );
 

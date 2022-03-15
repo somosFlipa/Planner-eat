@@ -1,23 +1,25 @@
 const express = require("express");
 const app = express();
+const db = require('./database/db')
 
+
+//Inicializacion del server
 const PORT = process.env.PORT || 3000;
 
-
-
-app.use(express.json());
-app.use(
-  express.urlencoded({
-    extended: true,}));
-
 app.listen(PORT, () => {
-  console.log(`Server start on ${PORT}`);
-});
-
-app.get("/", (req, res) => {
-res.status(200).send('funciono correctamente')
-  res.json({ user: 'Maximo'})
+  console.log('Server start');
 });
 
 
-// empezando el proyecto
+
+const recipe = require('./routes/route-cookingRecipe');
+app.use('/recipes', recipe) 
+// prueba database
+db.authenticate()
+  .then(() => {
+    console.log("Database conectada");
+})
+  .catch((error) => {
+    console.log('no arranco');
+});
+

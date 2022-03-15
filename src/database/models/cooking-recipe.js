@@ -1,7 +1,9 @@
 const { Sequelize } = require("sequelize");
-const db = require("../db/database");
-require('./ingredients')
+const db = require("../db");
+const ingredients = require('./ingredients')
+const dish = require('./dish')
 'use strict';
+
 const cookingRecipe = db.define(
   "cooking-recipe",
   {
@@ -59,7 +61,9 @@ const cookingRecipe = db.define(
   },
   {
     timestamps: false,
+  freezeTableName: true,
   }
 );
 
+cookingRecipe.belongsToMany(ingredients, { through: dish });
 module.exports = cookingRecipe;

@@ -1,6 +1,6 @@
 const { Sequelize } = require("sequelize");
-const db = require("../db/database");
-'use strict';
+const db = require("../db");
+
 
 const day = db.define(
   "day",
@@ -24,6 +24,7 @@ const day = db.define(
   },
   {
     timestamps: false,
+  freezeTableName: true,
   }
 );
 

@@ -1,6 +1,7 @@
 const { Sequelize } = require("sequelize");
-const db = require("../db/database");
-'use strict';
+const db = require("../db");
+const cookingRecipe = require("./cooking-recipe");
+const dish = require("./dish");
 
 const ingredients = db.define(
   "ingredients",
@@ -16,7 +17,9 @@ const ingredients = db.define(
   },
   {
     timestamps: false,
+  freezeTableName: true,
   }
 );
+
 
 module.exports = ingredients;
