@@ -6,11 +6,11 @@ const db = require("../db");
 const dish = db.define(
   "dish",
   {
-    IdCookingRecipe: {
+     cookingrecipeId: {
       type: Sequelize.INTEGER,
       allowNull: false,
     },
-    idIngredients: {
+    ingredientId: {
       type: Sequelize.INTEGER,
       allowNull: false,
     },

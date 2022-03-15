@@ -14,8 +14,6 @@ app.listen(PORT, () => {
 
 const recipe = require('./routes/route-cookingRecipe');
 app.use('/recipes', recipe) 
-
-
 // prueba database
 db.authenticate()
   .then(() => {

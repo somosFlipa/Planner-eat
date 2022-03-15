@@ -65,7 +65,6 @@ const cookingRecipe = db.define(
   }
 );
 
-// cookingRecipe.hasMany(ingredients);
-
+cookingRecipe.belongsToMany(ingredients, { through: dish });
 
 module.exports = cookingRecipe;
